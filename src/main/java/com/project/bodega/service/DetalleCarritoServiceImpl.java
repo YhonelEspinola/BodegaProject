@@ -30,7 +30,7 @@ public class DetalleCarritoServiceImpl implements DetalleCarritoService{
         if (existingDetalle.isPresent()) {
             DetalleCarritoEntity updatedDetalle = existingDetalle.get();
 
-            // Actualiza los campos necesarios
+
             if (detalle.getCantidad() > 0) {
                 updatedDetalle.setCantidad(detalle.getCantidad());
             }
@@ -41,11 +41,10 @@ public class DetalleCarritoServiceImpl implements DetalleCarritoService{
                 updatedDetalle.setProducto(detalle.getProducto());
             }
 
-            // Guarda y retorna el detalle actualizado
+
             return detalleCarritoRepository.save(updatedDetalle);
         }
 
-        // Si no se encuentra el detalle, retorna null o lanza una excepción
         throw new RuntimeException("Detalle del carrito no encontrado con ID: " + id);
     }
 

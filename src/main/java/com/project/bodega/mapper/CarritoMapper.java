@@ -27,7 +27,7 @@ public class CarritoMapper {
         detalle.setCantidad(detalleDTO.getCantidad());
         detalle.setPrecioTotal(detalleDTO.getPrecioTotal());
 
-        // Aquí asignamos las relaciones con las entidades CarritoEntity y ProductoEntity
+
         if (detalleDTO.getIdCarrito() != null) {
             CarritoEntity carrito = new CarritoEntity();
             carrito.setIdCarrito(detalleDTO.getIdCarrito());

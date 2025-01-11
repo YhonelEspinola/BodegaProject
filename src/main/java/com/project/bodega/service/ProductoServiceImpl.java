@@ -70,10 +70,10 @@ public class ProductoServiceImpl implements ProductoService{
         CategoriaEntity categoria = categoriaRepository.findById((long) idCategoria).orElse(null);
 
         if (categoria != null) {
-            // Obtener las relaciones Producto-Categoría
+
             List<ProductCategoriaEntity> relaciones = productoCategoriaRepository.findByCategoria(categoria);
 
-            // Extraer y mapear los productos relacionados
+
             return relaciones.stream()
                     .map(relacion -> {
                         ProductoEntity productoEntity = relacion.getProducto();

@@ -16,7 +16,7 @@ public class CarritoServiceImpl implements CarritoService{
 
     @Override
     public CarritoEntity getCarritoByUsuario(UsuarioEntity usuario) {
-        // Buscar carrito asociado al usuario
+
         return carritoRepository.findByUsuario(usuario);
     }
 
@@ -32,7 +32,7 @@ public class CarritoServiceImpl implements CarritoService{
         if (existingCarrito.isPresent()) {
             CarritoEntity updatedCarrito = existingCarrito.get();
 
-            // Actualizar los campos necesarios
+
             if (carrito.getUsuario() != null) {
                 updatedCarrito.setUsuario(carrito.getUsuario());
             }
@@ -40,16 +40,16 @@ public class CarritoServiceImpl implements CarritoService{
                 updatedCarrito.setFechaCreacion(carrito.getFechaCreacion());
             }
 
-            // Guardar el carrito actualizado
+
             return carritoRepository.save(updatedCarrito);
         }
 
-        return null; // Si no se encuentra el carrito, devolver null o lanzar una excepción
+        return null;
     }
 
     @Override
     public CarritoEntity getCarritoById(Long id) {
-        Optional<CarritoEntity> carrito = carritoRepository.findById(id); // Buscar carrito por ID
+        Optional<CarritoEntity> carrito = carritoRepository.findById(id);
         return carrito.orElse(null);
     }
 

@@ -16,7 +16,7 @@ public class CategoriaDTO {
         this.nombre = nombre;
     }
 
-    // Getters y Setters
+
     public Long getId() {
         return id;
     }

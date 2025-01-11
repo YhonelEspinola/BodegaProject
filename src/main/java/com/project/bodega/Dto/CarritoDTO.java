@@ -10,7 +10,6 @@ public class CarritoDTO {
     private Long idUsuario;
     private LocalDateTime fechaCreacion;
 
-    // Getters y Setters
     public Long getIdCarrito() {
         return idCarrito;
     }

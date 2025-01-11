@@ -42,10 +42,9 @@ public class PedidoController {
 
     @PostMapping
     public ResponseEntity<PedidoDTO> createPedido(@RequestBody PedidoDTO dto) {
-        // Obtener UsuarioEntity desde el servicio o repositorio
         UsuarioEntity usuario = usuarioService.getUsuarioById(dto.getIdUsuario());
         if (usuario == null) {
-            return ResponseEntity.badRequest().build(); // Retorna error si el usuario no existe
+            return ResponseEntity.badRequest().build();
         }
 
         PedidoEntity pedido = PedidoMapper.toEntity(dto, usuario);
@@ -55,10 +54,9 @@ public class PedidoController {
 
     @PutMapping("/{id}")
     public ResponseEntity<PedidoDTO> updatePedido(@PathVariable Long id, @RequestBody PedidoDTO dto) {
-        // Obtener UsuarioEntity desde el servicio o repositorio
         UsuarioEntity usuario = usuarioService.getUsuarioById(dto.getIdUsuario());
         if (usuario == null) {
-            return ResponseEntity.badRequest().build(); // Retorna error si el usuario no existe
+            return ResponseEntity.badRequest().build();
         }
 
         PedidoEntity pedido = PedidoMapper.toEntity(dto, usuario);

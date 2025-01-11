@@ -25,15 +25,13 @@ public class DetalleCarritoController {
 
     @GetMapping("/{idCarrito}")
     public ResponseEntity<List<DetalleCarritoEntity>> getDetalleByCarrito(@PathVariable Long idCarrito) {
-        // Obtener el CarritoEntity por su id
         CarritoEntity carrito = carritoService.getCarritoById(idCarrito);
 
         if (carrito != null) {
-            // Pasar el CarritoEntity al servicio para obtener los detalles
             List<DetalleCarritoEntity> detalles = detalleCarritoService.getDetalleByCarrito(carrito);
-            return ResponseEntity.ok(detalles); // Retorna los detalles
+            return ResponseEntity.ok(detalles);
         } else {
-            return ResponseEntity.notFound().build(); // Si no se encuentra el carrito, retornar 404
+            return ResponseEntity.notFound().build();
         }
     }
 

@@ -62,7 +62,7 @@ public class UsuarioController {
 
 
 
-    // Métodos auxiliares para conversión
+
     private UsuarioDto convertToDto(UsuarioEntity usuario) {
         UsuarioDto dto = new UsuarioDto();
         dto.setIdUsuario(usuario.getIdUsuario());

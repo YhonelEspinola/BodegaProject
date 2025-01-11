@@ -31,7 +31,7 @@ public class ProductoEntity {
     public ProductoEntity() {
     }
 
-    // Constructor con parámetros para crear una instancia con todos los valores
+
     public ProductoEntity(Long idProductos, String nombre, String descripcion, double precio,
                           String imagenUrl, int stock, LocalDateTime fechaCreacion) {
         this.idProductos = idProductos;

@@ -1,6 +1,6 @@
 package com.project.bodega.Dto;
 
-import lombok.Data;
+
 
 
 public class DetallePedidoDTO {

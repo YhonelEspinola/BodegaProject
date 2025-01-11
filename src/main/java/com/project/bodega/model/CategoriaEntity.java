@@ -1,9 +1,7 @@
 package com.project.bodega.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 
 @Entity
@@ -16,16 +14,15 @@ public class CategoriaEntity {
 
     private String nombre;
 
-    // Constructor vacío
+
     public CategoriaEntity() {}
 
-    // Constructor con parámetros
     public CategoriaEntity(Long id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
 
-    // Getter y Setter para el campo id
+
     public Long getId() {
         return id;
     }

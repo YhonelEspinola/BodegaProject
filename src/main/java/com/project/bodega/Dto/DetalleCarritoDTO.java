@@ -13,7 +13,7 @@ public class DetalleCarritoDTO {
     private Long idCarrito;
     private Long idProductos;
 
-    // Getters y Setters
+
     public Long getIdDetalleCarrito() {
         return idDetalleCarrito;
     }

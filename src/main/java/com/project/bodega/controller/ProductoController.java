@@ -2,7 +2,6 @@ package com.project.bodega.controller;
 
 import com.project.bodega.Dto.ProductoDTO;
 import com.project.bodega.mapper.Mapper;
-import com.project.bodega.service.CategoriaService;
 import com.project.bodega.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

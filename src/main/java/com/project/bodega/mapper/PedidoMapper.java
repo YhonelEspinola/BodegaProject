@@ -8,7 +8,7 @@ public class PedidoMapper {
     public static PedidoEntity toEntity(PedidoDTO dto, UsuarioEntity usuario) {
         PedidoEntity pedido = new PedidoEntity();
         pedido.setIdPedidos(dto.getIdPedidos());
-        pedido.setEstado(PedidoEntity.EstadoPedido.valueOf(dto.getEstado()));  // Convierte String a Enum
+        pedido.setEstado(PedidoEntity.EstadoPedido.valueOf(dto.getEstado()));
         pedido.setFechaPedido(dto.getFechaPedido());
         pedido.setTotal(dto.getTotal());
         pedido.setUsuario(usuario);
@@ -18,7 +18,7 @@ public class PedidoMapper {
     public static PedidoDTO toDTO(PedidoEntity entity) {
         PedidoDTO dto = new PedidoDTO();
         dto.setIdPedidos(entity.getIdPedidos());
-        dto.setEstado(entity.getEstado().toString());  // Convierte Enum a String
+        dto.setEstado(entity.getEstado().toString());
         dto.setFechaPedido(entity.getFechaPedido());
         dto.setTotal(entity.getTotal());
         dto.setIdUsuario(entity.getUsuario().getIdUsuario());
