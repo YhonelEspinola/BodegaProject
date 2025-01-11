@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface DetalleCarritoRepository extends JpaRepository<DetalleCarritoRepository, Long>{
+public interface DetalleCarritoRepository extends JpaRepository<DetalleCarritoEntity, Long>{
 
     List<DetalleCarritoEntity> findByCarrito(CarritoEntity carrito);
 

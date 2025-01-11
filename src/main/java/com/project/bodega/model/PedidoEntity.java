@@ -1,5 +1,6 @@
 package com.project.bodega.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Data
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -32,6 +33,7 @@ public class PedidoEntity {
 
     @ManyToOne
     @JoinColumn(name = "idUsuario", nullable = false)
+    @JsonIgnore
     private UsuarioEntity usuario;
 
     public enum EstadoPedido{
@@ -40,4 +42,43 @@ public class PedidoEntity {
         ENTREGADO
     }
 
+    public Long getIdPedidos() {
+        return idPedidos;
+    }
+
+    public void setIdPedidos(Long idPedidos) {
+        this.idPedidos = idPedidos;
+    }
+
+    public EstadoPedido getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoPedido estado) {
+        this.estado = estado;
+    }
+
+    public LocalDateTime getFechaPedido() {
+        return fechaPedido;
+    }
+
+    public void setFechaPedido(LocalDateTime fechaPedido) {
+        this.fechaPedido = fechaPedido;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public UsuarioEntity getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(UsuarioEntity usuario) {
+        this.usuario = usuario;
+    }
 }

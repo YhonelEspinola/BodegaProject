@@ -9,10 +9,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ProductoCategoriaRepository extends JpaRepository<ProductoCategoriaRepository, Long>{
+public interface ProductoCategoriaRepository extends JpaRepository<ProductCategoriaEntity, Long>{
 
-    List<ProductCategoriaEntity> findCategoria(CategoriaEntity categoriaEntity);
+    List<ProductCategoriaEntity> findByCategoria(CategoriaEntity categoria);
 
-    List<ProductoEntity> findByIdProductosIn(List<Long> idCategoria);
-
+    List<Long> findIdProductosByCategoria(CategoriaEntity categoria);
 }

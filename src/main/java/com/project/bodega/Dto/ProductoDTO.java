@@ -1,6 +1,5 @@
-package com.project.bodega.model;
+package com.project.bodega.Dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,32 +7,20 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 
-@Entity
-@Table(name = "productos")
-public class ProductoEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProductoDTO {
     private Long idProductos;
-
     private String nombre;
     private String descripcion;
-    @Column(nullable = false)
     private double precio;
-    @Column(name = "imagen_url")
     private String imagenUrl;
-    @Column(nullable = false)
     private int stock;
-
-    @Column(name = "fecha_creacion", updatable = false)
     private LocalDateTime fechaCreacion;
 
-    public ProductoEntity() {
+    public ProductoDTO() {
     }
 
-    // Constructor con parámetros para crear una instancia con todos los valores
-    public ProductoEntity(Long idProductos, String nombre, String descripcion, double precio,
-                          String imagenUrl, int stock, LocalDateTime fechaCreacion) {
+    public ProductoDTO(Long idProductos, String nombre, String descripcion, double precio, String imagenUrl, int stock, LocalDateTime fechaCreacion) {
         this.idProductos = idProductos;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -83,19 +70,19 @@ public class ProductoEntity {
         this.imagenUrl = imagenUrl;
     }
 
-    public LocalDateTime getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(LocalDateTime fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-
     public int getStock() {
         return stock;
     }
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 }
